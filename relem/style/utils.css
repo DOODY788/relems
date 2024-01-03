@@ -1,0 +1,233 @@
+/* IMPORTERS */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&display=swap');
+
+/* DEFINING UTILS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background:#040f13;
+    --backgroundlight:#0d1b1e;
+    --backgroundlightrgb:rgb(13, 27, 30,0.8);
+    --backgrounddark: rgb();
+    --primary:#06cee0;
+    --secondary: rgb(5,5,5);
+    --cover:rgb(255,255,255);
+    --highlighter: #9ae3e9;
+    --subtext:#4d7c81;
+    --boxshadow:#153034;
+    --borderframe: #092427;
+    --translucent:rgba(0,0,0,0.5);
+    --error:rgb(255, 84, 84);
+}
+.font-branding{
+    font-family: 'Lobster', cursive;
+}
+.font-main-regular{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.font-main-medium{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.font-main-light{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.centerX{
+    justify-content: center;
+}
+.centerY{
+    align-items: center;
+}
+a{
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+::-webkit-scrollbar-track{
+    background-color:rgb(0, 0, 0,0);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary);
+    border: 1px solid transparent;
+    border-radius: 15px;
+    transition: .5s;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--highlighter);
+}
+
+.title{
+    color: var(--cover);
+}
+
+.subtext{
+    color: var(--subtext);
+}
+
+.defbutton{
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin-bottom:1rem;
+    border: 2px solid var(--boxshadow);
+    border-radius: 25px;
+    background-color: var(--highlighter);
+    box-shadow: 0 0 5px var(--boxshadow);
+    cursor: pointer;
+    transition: .2s;
+}
+.defbutton:hover{
+    box-shadow:0 0 45px var(--boxshadow);
+    background-color: transparent;
+    color: var(--highlighter);
+}
+
+.definp{
+    outline: none;
+    border: 2px solid var(--borderframe);
+    background-color: var(--background);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: var(--cover);
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 0 3px var(--boxshadow);
+    transition: .3s;
+}
+.definp:focus , .definp:hover{
+    box-shadow: 0 0 45px var(--boxshadow);
+}
+
+.slideinit{
+    transform: translateX(-50px);
+    transition: .1s;
+    opacity: 0;
+}
+.slidein{
+    animation: slidein;
+    animation-timing-function: ease-in-out;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+.slidein_rhs{
+    animation: slidein_rhs;
+    animation-timing-function: ease-in-out;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+.fadeinit{
+    opacity: 0;
+}
+.fadein{
+    animation: fade;
+    animation-timing-function: ease-in-out;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+.sinkout{
+    animation: sinkout;
+    animation-timing-function: ease-in-out;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' -25,
+  'opsz' 48;
+  user-select: none;
+}
+
+/* Animations */
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slidein{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes sinkout{
+    0%{
+        opacity: 1;
+        /* transform: scale(1); */
+    }100%{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+@keyframes slidein_rhs{
+    0%{
+        opacity: 0;
+        transform:translateX(250%);
+    }
+    25%{
+        opacity: 1;
+        transform: translateX(-50px);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(250%);
+    }
+}
+@keyframes gdby {
+    0%{
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(80px);
+    }
+}

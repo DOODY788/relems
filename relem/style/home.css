@@ -1,0 +1,257 @@
+@import url('../style/utils.css');
+
+body {
+    color: var(--cover);
+    text-align: center;
+    background-color: var(--background);
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    font-size: 1.3rem;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.header{
+    transition: .5s;
+}
+
+.Branding {
+    text-align: left;
+    width: 25%;
+}
+
+.navigation {
+    width: 30%;
+    position: relative;
+}
+
+.navigation ul {
+    width: 100%;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navigation li {
+    position: relative;
+    animation: fade;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    opacity: 0;
+}
+
+
+.navigation li:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.navigation li:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.navigation li:nth-child(3) {
+    animation-delay: .3s;
+}
+
+.navigation li:nth-child(4) {
+    animation-delay: .4s;
+}
+
+.navigation li:nth-child(5) {
+    animation-delay: .5s;
+}
+
+.navigation li:nth-child(6) {
+    animation-delay: .6s;
+}
+
+.navigation li:nth-child(1) {
+    animation-delay: .2s;
+}
+
+.navigation li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    background-color: transparent;
+    border-bottom: 1px solid var(--cover);
+    transform: scaleX(0);
+    z-index: -4;
+    transition: .2s ease-out;
+}
+
+.navigation li:hover::after {
+    transform: scaleX(1);
+}
+
+a {
+    color: var(--cover);
+}
+
+.intro {
+    height: 65rem;
+    color: var(--cover);
+    background-image: url('../assets/img/homeback.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15rem;
+    box-shadow: 0px 0px 240px var(--background) inset;
+    animation: fade;
+    animation-timing-function: ease-in;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    opacity: 0;
+}
+
+.intro h2 {
+    font-size: 5rem;
+    text-shadow: 2px 2px black;
+    animation: fade;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+.intro p {
+    animation: fade;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: .2s;
+    opacity: 0;
+}
+
+.recent{
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+.recentposts{
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+
+
+.postcard{
+    background-color: var(--backgroundlight);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    border: 1px solid var(--boxshadow);
+    min-width: 25rem;
+    max-width: 25rem;
+    min-height: 25rem;
+    max-height: 35rem;
+    box-shadow: 0 0 5px var(--boxshadow);
+    transition: .2s;
+    position: relative;
+}
+
+.postcard:hover{
+    box-shadow: 0 0 45px var(--boxshadow);
+}
+
+.headding h3{
+    font-size: 1.8rem;
+}
+
+.postimage img{
+    margin: 2rem 0 1rem 0;
+    width: 95%;
+}
+
+.preview_content{
+    margin: 1rem;
+    height:5rem;
+    overflow: hidden;
+}
+
+.readmore{
+    box-shadow: 10px -80px 25px var(--background) inset;
+    position: absolute;
+    width: 100%;
+    height:30%;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    align-items:end;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 0.8rem;
+    border-top: 0;
+}
+
+footer{
+    margin: 5rem 0 5rem 0;
+    /* padding: 1rem; */
+    user-select: none;
+    background-image: url('../assets/img/homeback.jpg');
+    background-size: cover;
+}
+
+.upplayer{
+    background-color: var(--backgroundlightrgb);
+    backdrop-filter: blur(90px);
+    -webkit-backdrop-filter: blur(90px);    
+    box-shadow: 0 10px 25px var(--background) inset;
+}
+
+.greeting h2{
+    margin: 2rem;
+    font-size: 2.4rem;
+    padding: 1rem;
+}
+
+.formdiv{
+    width: 100%;
+}
+
+.form{
+    width: 45%;
+    text-align: center;
+    justify-content:flex-start;
+}
+
+.form .defbutton{
+    margin:auto;
+    width: 25%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    margin-top: 1rem;
+    transition: .2s;
+    margin-bottom: 1rem;
+}
+
+.useridentity{
+    justify-content: flex-start;
+    width: 100%;
+}
+.useridentity input{
+    width: 48%;
+}
+
+.ending p{
+    margin: 2rem;
+    text-align: center;
+    color: var(--highlighter);
+}
+

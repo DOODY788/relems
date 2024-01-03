@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read this article</title>
+    <link rel="stylesheet" href="../../style/home.css">
+    <link rel="stylesheet" href="../../style/utils.css">
+    <link rel="stylesheet" href="../../style/article.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <main>
+        <header class="flex-row centerY header">
+            <section class="Branding font-branding">RELEM</section>
+            <section class="navigation font-regular">
+                <nav>
+                    <ul class="flex-row centerY">
+                        <li><a href="/" class="font-main-light">Home</a></li>
+                        <li><a href="/about" class="font-main-light">About</a></li>
+                        <li><a href="/posts" class="font-main-light">Posts</a></li>
+                        <li><a href="/contact" class="font-main-light">contact</a></li>
+                        <li><a href="/settings" class="font-main-light">Settings</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+        <section class="content font-main-regular">
+            <section class="post">
+                <div class="authorinfo flex-column">
+                    <img src="../../assets/img/authorimg.jpg" alt="">
+                    <h2 class="heading font-main-medium">July</h2>
+                    <p class="subtext">Author</p>
+                    <br>
+                    <div class="social">
+                        <ul class="flex-column font-main-light">
+                            <li class="link fa fa-facebook"><a href=""></a></li>
+                            <li class="link fa fa-instagram"><a href=""></a></li>
+                            <li class="link fa fa-twitter"><a href=""></a></li>
+                            <li class="link fa fa-pinterest"><a href=""></a></li>
+                            <li class="link fa fa-linkedin"><a href=""></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="title font-main-medium">
+                    <h1 class="heading fade">#{title}</h1>
+                </div>
+                <div class="subtitle subtext font-main-light flex-row fade">
+                    <p>#{subtitle}</p>
+                    <p>Date:--/--/--</p>
+                </div>
+                <div class="article font-main-light fade">#{blog_content}</div>
+                <div class="rating">
+                    <span class="like material-symbols-rounded">favorite</span>
+                    <span class="like material-symbols-rounded">chat</span>
+                </div>
+                <div class="readnext flex-row">
+                    <button class="defbutton">Read Next</button>
+                </div>
+            </section>
+        </section>
+    </main>
+    <div class="more">
+        <span class="material-symbols-rounded">expand_less</span>
+    </div>
+    <div class="morecontent">
+        <div class="close">
+            <span class="material-symbols-rounded">close</span>
+        </div>
+        <div class="cntfrm">
+            <section class="postdiv flex-row centerY">
+                <div class="psts">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/178/411/657/sunset-mountains-landscape-himalayas-wallpaper-preview.jpg"alt="something">
+                    <h3>Trip to ---- </h3>
+                    <p class="font-main-light">Sub title</p>
+                    <div class="ratediv font-main-light flex-row">
+                        <span>Likes: 455</span><span>Clicks: 1k</span>
+                    </div>
+                    <form action="/posts/articlename" class="flex-row btnform">
+                        <input type="submit" value="Read" class="defbutton">
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="../../logic/article.js"></script>
+
+</html>

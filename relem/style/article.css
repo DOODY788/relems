@@ -1,0 +1,274 @@
+@import url(./utils.css);
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+body{
+    background-image: url('../assets/img/adminback.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(90px);
+    overflow:hidden;
+    height: 100vh;
+}
+
+header{
+    position: relative;
+    background-color: var(--backgroundlightrgb);
+
+}
+
+main{width: 100vw;height: 100%;}
+
+.content{
+    width: 100%;
+    height:100%;
+    background-color: var(--backgroundlightrgb);
+    text-align: left;
+    overflow-y: scroll;
+}
+.post{
+    width: 65%;
+    margin: auto;
+    text-shadow: 1px 1px black;
+    background-color: var(--background);
+    padding: 1rem;
+    border: 1px solid var(--borderframe);
+    box-shadow: 0 0 85px var(--boxshadow);
+    margin-bottom: 5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    animation: fade .5s ease-in-out normal forwards;
+}
+
+.title{
+    font-size:2.5rem;
+    margin: 1rem;
+}
+
+.subtitle{
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    margin: 1rem;
+}
+
+.article{
+    font-size: 1.3rem;
+    /* margin: 1rem 0.2rem 1rem 0.2rem; */
+    margin: 1rem;
+    /* letter-spacing: 0.08rem; */
+    font-weight: 100;
+}
+.authorinfo{
+    position:absolute;
+    left: -6.8rem;
+    top: 6rem;
+    height: 10rem;
+    background-color: var(--background);
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--borderframe);
+    border-right: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+}
+.authorinfo img{
+    width: 5rem;
+    border: 3px solid var(--borderframe);
+    border-radius: 100%;
+    padding: 0;
+}
+
+.authorinfo:hover{
+    box-shadow: 0 0 55px var(--boxshadow);
+    height:fit-content;
+}
+.rating span{
+    margin: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: .2s;
+    background-color: transparent;
+}
+.rating span:hover{
+    box-shadow:  0 0 25px var(--boxshadow);
+    /* background-color: var(--boxshadow); */
+    transform: scale(1.2);
+    color: var(--primary);
+}
+.link{
+    align-items: flex-start;
+    padding:none;
+    transition: .3s;
+}
+
+.link:nth-child(1):hover{
+    color:blue;
+    transform:scale(1.3)
+}
+.link:nth-child(2):hover{
+    color:darkmagenta;
+    transform:scale(1.3)
+}
+.link:nth-child(3):hover{
+    color:lightseagreen;
+    transform:scale(1.3)
+}
+.link:nth-child(4):hover{
+    color:red;
+    transform:scale(1.3)
+}
+.link:nth-child(5):hover{
+    color:blue;
+    transform:scale(1.3)
+}
+
+.readnext{
+    width:100%;
+    height: fit-content;
+    justify-content: end;
+}
+.more{
+    position: absolute;
+    z-index: 1;
+    bottom: -15px;
+    background-color: var(--backgroundlight);
+    box-shadow: 0 0 25px var(--boxshadow);
+    border: 1px solid var(--borderframe);
+    border-radius: 100%;
+    right: calc(50vw - 3rem);
+}
+.more span{
+    font-size: 3rem;
+    cursor: pointer;;
+}
+.morecontent{display: none;}
+
+.expand{
+    animation-name: growanim;
+    animation-timing-function: ease-in-out;
+    animation-duration: .2s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    background-color: var(--background);
+    display: block;
+    transform-origin: bottom;
+}
+.closer{
+    animation-name: shrinkanim;
+    animation-timing-function: ease-in-out;
+    animation-duration: .2s;
+    animation-direction:normal;
+    animation-fill-mode:forwards;
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    display: block;
+}
+
+.close span{
+    font-size: 3rem;
+    cursor: pointer;
+}
+.psts{
+    background-color: var(--backgroundlight);
+    min-width:15rem;
+    max-width: 15rem;
+    overflow: hidden;
+    min-height:20rem;
+    max-height: 25rem;
+    padding: 0.5rem;
+    text-align: left;
+    margin: 1rem;
+    box-shadow: 0 0 10px var(--boxshadow);
+    user-select: none;
+    transition: .2s;
+    text-overflow:ellipsis; 
+}
+.psts:hover{
+    box-shadow: 0 0 50px var(--boxshadow);
+    transform: scale(1.05);
+}
+.psts img{
+    width:100%;
+    margin: 0.5rem 0 0.5rem;
+}  
+
+.psts h3{
+    padding: 0.1rem;
+    font-size: 1.3rem;
+    margin: 0rem 0 0.5rem 0;   
+    white-space: nowrap;
+    text-overflow:ellipsis; 
+}
+
+.psts p{
+    color: var(--subtext);
+}
+
+.btnform{
+    justify-content: flex-end;
+    padding: 0.2rem;
+}
+.ratediv{
+    width: 100%;
+    margin: 0.5rem 0 0.1rem 0;
+}
+.ratediv span{
+    margin: 0 1rem 0 0;
+    color: var(--primary);
+}
+
+.fade{opacity: 0;}
+
+.fade:nth-child(1){
+    animation: fade .5s ease-in-out normal forwards;
+    animation-delay: .2s;
+}
+.fade:nth-child(2){
+    animation: fade .5s ease-in-out normal forwards;
+    animation-delay: .3s;
+}
+.fade:nth-child(3){
+    animation: fade .5s ease-in-out normal forwards;
+    animation-delay: .4s;
+}
+.fade:nth-child(4){
+    animation: fade .5s ease-in-out normal forwards;
+    animation-delay: .5s;
+}
+
+@keyframes growanim {
+    0%{
+        top: 100%;
+        display: none;
+    }
+    100%{
+        top:0;
+        display: block;
+    }
+}
+@keyframes shrinkanim {
+    0%{
+        top:0;
+        display: block;
+    }
+    100%{
+        top: 100%;
+        display: none;
+    }
+}

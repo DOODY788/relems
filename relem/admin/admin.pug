@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../style/utils.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./admin/admin.css" type="text/css">
+    <title>Admin Controlls</title>
+</head>
+
+<body>
+    <div class="backfilter">
+        <main class="font-main-regular">
+            <section class="toolbar flex-column">
+                <section class="profilepic">
+                    <img src="../assets/img/authorimg.jpg" alt="Profile Pic">
+                    <h3 class="font-main-regular heading">Juily</h3>
+                    <p class="font-main-light subtext">Author</p>
+                </section>
+                <section class="tools">
+                    <div class=" btn flex-row centerY font-main-light" onclick="run.clickEvent(this)" data-btn="tabbtn" data-container="dashboard"><span class="material-symbols-rounded">dashboard</span>Dahsboard
+                    </div>
+                    <div class=" btn flex-row centerY font-main-light" onclick="run.clickEvent(this)" data-btn="tabbtn" data-container="anaylitic"><span class="material-symbols-rounded">analytics</span>Analyise</div>
+                    <div class=" btn flex-row centerY font-main-light" onclick="run.clickEvent(this)" data-btn="tabbtn" data-container="contentup"><span class="material-symbols-rounded">publish</span>Upload content
+                    </div>
+                    <div class=" btn flex-row centerY font-main-light" onclick="run.clickEvent(this)" data-btn="tabbtn" data-container="addwidget"><span class="material-symbols-rounded">add</span>Add widgets</div>
+                    <div class=" btn flex-row centerY font-main-light" onclick="run.clickEvent(this)" data-btn="tabbtn" data-container="customizetheme"><span class="material-symbols-rounded">brush</span>Customize web
+                    </div>
+                </section>
+                <section class="set">
+                    <div class="sett btn flex-row centerY font-main-light" onclick="run.clickEvent(this)" data-btn="tabbtn" data-container="settings"><span class="material-symbols-rounded">settings</span>Settings</div>
+                </section>
+                <section class="lgot">
+                    <div class="lgout btn flex-row centerY font-main-light" onclick="run.clickEvent(this)" data-btn="tabbtn" data-container="logout"><span class="material-symbols-rounded">logout</span>Log out</div>
+                </section>
+            </section>
+            <section class="workspace">
+                <div class="container dashboard">
+                    <div class="greeting fadein">
+                        <h2 class="heading font-main-regular">Wellcome back Juily!</h2>
+                        <p class="subtext font-main-light">Wish you a very productive day 😄</p>
+                    </div>
+                    <div class="cards flex-row ">
+                        <div class="quickoverview card fadein">
+                            <h2 class="headding font-main-regular">Here is a quick overview of your blog</h2>
+                            <div class="content">
+                                some content over here
+                            </div>
+                        </div>
+                        <div class="pushads card fadein">
+                            <h2>Promote your blogs thorugh ads!</h2>
+                            <p class="subtext">Push an advertisement right now</p>
+                            <form action="/pushadd">
+                                <input type="submit" value="Push an Add" class="defbutton">
+                            </form>
+                        </div>
+                        <div class="currentSub card fadein">
+                            <h2 class="headding">Current subscribers</h2>
+                            <p class="subtext">These are the users who are connected with you from your blog</p>
+                        </div>
+                        <div class="sendmail card fadein">
+                            <h2>Push an email to all of your subscribers</h2>
+                            <p class="subtext">you can now send email to all of your subscibers with just single click
+                            </p>
+                            <div class="emaileditor flex-column centerY">
+                                <input type="text" name="subject" id="subject" placeholder="Subject" class="definp">
+                                <textarea name="message" id="emailtxt" cols="35" rows="15" style="resize: none;" class="definp font-main-light" placeholder="Write your message"></textarea>
+                            </div>
+                            <button class="defbutton">Send email</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container contentup slidein">
+                    <section class="previouscontent"></section>
+                    <section class="uploadcontent">
+                        <div class="blogwriter">
+                            <form action="/push_a_post" class="flex-column centerX" method="post" enctype="multipart/form-data">
+                                <input type="text" name="title" id="title" class="definp font-main-light fadein cnt-anim" placeholder="Title">
+
+                                <input type="text" name="subtitle" id="subtitle" class="definp font-main-light fadein cnt-anim" placeholder="Subtitle">
+
+
+                                <input type="file" name="img" id="img" class="definp font-main-light fadein cnt-anim">
+                                <div class="txttools">
+                                    <button class="edbtn fadein cnt-anim" id="bold" type="button" onclick="txteditor(this)"><b>B</b></button>
+                                    <button class="edbtn fadein cnt-anim" id="italic" type="button"><i>i</i></button>
+                                    <button class="edbtn fadein cnt-anim" id="underline" type="button"><u>U</u></button>
+                                </div>
+                                <textarea name="blogcont" id="blogcont" cols="100" rows="25" style="resize: none;" class="font-main-light definp fadein cnt-anim" placeholder="Your Content"></textarea>
+                                <input type="submit" value="Post" class="defbutton   fadein cnt-anim" id="postbtn" >
+                            </form>
+                        </div>
+                    </section>
+                </div>
+                <div class="container addwidget slidein">
+                    <section class="widinfo slidein">
+                        <h2 class="heading font-main-regular">Welcome to widget section:</h2>
+                    </section>
+                    <section class="activewidgets fadein flex-row">
+                        <div class="act-widget flex-row centerY fadein">
+                            <div class="acprop flex-column centerX">
+                                <h3 class="widname">Widget 1</h3>
+                                <p class="widpg">Notification at: Home page</p>
+
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sed in atque
+                                    perspiciatis placeat dolorum amet doloremque assumenda impedit facere nobis
+                                    aspernatur sequi sit ipsa alias, quisquam eum cum laboriosam, delectus perferendis?
+                                    Laudantium in porro qui consectetur vero iusto officia odio id ipsum unde, eligendi,
+                                    eos quae praesentium, et incidunt cum deserunt molestias illum rem!
+                                </div>
+                            </div>
+                            <div class="expander"><span class="material-symbols-rounded" onclick="run.clickEvent(this)" data-btn="expander" data-parent="act-widget" data-status="off">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="act-widget flex-row centerY fadein">
+                            <div class="acprop flex-column centerX">
+                                <h3 class="widname">Widget 1</h3>
+                                <p class="widpg">Notification at: Home page</p>
+
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sed in atque
+                                    perspiciatis placeat dolorum amet doloremque assumenda impedit facere nobis
+                                    aspernatur sequi sit ipsa alias, quisquam eum cum laboriosam, delectus perferendis?
+                                    Laudantium in porro qui consectetur vero iusto officia odio id ipsum unde, eligendi,
+                                    eos quae praesentium, et incidunt cum deserunt molestias illum rem!
+                                </div>
+                            </div>
+                            <div class="expander"><span class="material-symbols-rounded" onclick="run.clickEvent(this)" data-btn="expander" data-parent="act-widget" data-status="off">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="act-widget flex-row centerY fadein">
+                            <div class="acprop flex-column centerX">
+                                <h3 class="widname">Widget 1</h3>
+                                <p class="widpg">Notification at: Home page</p>
+
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sed in atque
+                                    perspiciatis placeat dolorum amet doloremque assumenda impedit facere nobis
+                                    aspernatur sequi sit ipsa alias, quisquam eum cum laboriosam, delectus perferendis?
+                                    Laudantium in porro qui consectetur vero iusto officia odio id ipsum unde, eligendi,
+                                    eos quae praesentium, et incidunt cum deserunt molestias illum rem!
+                                </div>
+                            </div>
+                            <div class="expander"><span class="material-symbols-rounded" onclick="run.clickEvent(this)" data-btn="expander" data-parent="act-widget" data-status="off">expand_more</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="uploadwid">
+                        <section class="notfy-center fadein">
+                            <h3>Push a notification when a person visit your website:</h3>
+                            <div class="set-notfy">
+                                <div class="properties">
+                                    <label for="alig" class="label">Select alignment:
+                                        <select name="align" id="alig" class="font-main-light select">
+                                            <option value="center">Center</option>
+                                            <option value="left">Left</option>
+                                            <option value="right">Right</option>
+                                            <option value="top">Top</option>
+                                            <option value="bottom">Bottom</option>
+                                        </select>
+                                    </label>
+                                    <label for="ntanim" class="label">Select animation:
+                                        <select name="ntanim" id="ntanim" class="font-main-light select">
+                                            <option value="fade">Fade</option>
+                                            <option value="slidein">Slidein</option>
+                                            <option value="dropdown">Dropdown</option>
+                                            <option value="pushup">Pushup</option>
+                                        </select>
+                                    </label>
+                                    <label for="dis" class="label">Disappear:
+                                        <select name="dis" id="dis" class="font-main-light select" data-child="addwidget" data-type="select" oninput="run.setNtfyAnimation(this)">
+                                            <option value="default">Default</option>
+                                            <option value="settime">Set time</option>
+                                            <option value="after5s">After 5s</option>
+                                            <option value="closebtn">Use a close button</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="in-ntfy flex-column centerY">
+                                    <label for="cnt-txt" class="cnt-txt"> "Contains only text"
+                                        <input type="checkbox" name="cnt-txt" id="cnt-txt"class="font-main-light checkmark" checked data-child="addwidget"  oninput="run.checkConfig(this)">
+                                    </label>
+                                    <form action="" class="flex-column">
+                                        <label for="onclick" class="label">
+                                            On click :
+                                            <select name="onclick" id="onclick" class="font-main-light select" oninput="run.reinit(this)" data-type="select" data-child="addwidget">
+                                                <option value="link">Custom Link</option>
+                                                <option value="none">Do nothing</option>
+                                            </select>
+                                            <input type="text" placeholder="Your link" class="font-main-light definp lnkinp">
+                                        </label>
+                                        <input type="text" class="definp font-main-light" placeholder="Title">
+                                        <textarea name="ntcon" id="ntcon" cols="30" rows="3" placeholder="some message here" class="definp font-main-light" style="resize: none;"></textarea>
+                                    </form>
+                                    <div class="cnt-img">
+                                        <h3 class="heading">Contains images:</h3>
+                                        <p>This section is still under development</p>
+                                    </div>
+                                </div>
+                                <div class="adntfy flex-row centerY">
+                                    <button class="defbutton">Add Widget</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="userinteraction-center">
+                            <div class="feedback fadein">
+                                <div class="greeting">
+                                    <h3 class="heading">Add a feedback form:</h3>
+                                </div>
+                                <div class="pushfeedback slidein">
+                                    <h3>Feedback settings</h3>
+                                </div>
+                                <div class="properties fed">
+                                    <label for="fed-alig" class="label ">Select alignment:
+                                        <select name="fed-align" id="fed-alig" class="font-main-light select">
+                                            <option value="topleft">Top left</option>
+                                            <option value="bottomleft">Bottom left</option>
+                                            <option value="topright">Top right</option>
+                                            <option value="top">Bottom right</option>
+                                        </select>
+                                    </label>
+                                    <label for="fed-ntanim" class="label ">Select animation:
+                                        <select name="fed-ntanim" id="fed-ntanim" class="font-main-light select slidein">
+                                            <option value="fade">Fade</option>
+                                            <option value="slidein">Slidein</option>
+                                            <option value="dropdown">Dropdown</option>
+                                            <option value="pushup">Pushup</option>
+                                        </select>
+                                    </label>
+                                    <label for="pgs" class="label ">Pages:
+                                        <select name="pgs" id="pgs" class="font-main-light select" data-child="addwidget" data-type="select" oninput="run.setFedPage(this)">
+                                            <option value="allpages">All pages</option>
+                                            <option value="allposts">All posts</option>
+                                            <option value="home">Home</option>
+                                            <option value="about">About</option>
+                                            <option value="allpages">Custom post pages</option>
+
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="adntfy flex-row centerY">
+                                    <button class="defbutton">Add feedback</button>
+                                </div>
+                            </div>
+                            <div class="feedback fadein">
+                                <div class="greeting">
+                                    <h3 class="heading">Add a donation form:</h3>
+                                </div>
+                                <div class="pushfeedback slidein">
+                                    <h3>Donation settings</h3>
+                                </div>
+                                <div class="properties">
+                                    <label for="don-alig" class="label ">Select alignment:
+                                        <select name="don-align" id="don-alig" class="font-main-light select">
+                                            <option value="topleft">Top left</option>
+                                            <option value="bottomleft">Bottom left</option>
+                                            <option value="topright">Top right</option>
+                                            <option value="top">Bottom right</option>
+                                        </select>
+                                    </label>
+                                    <label for="don-ntanim" class="label ">Select animation:
+                                        <select name="don-ntanim" id="don-ntanim"class="font-main-light select slidein">
+                                            <option value="fade">Fade</option>
+                                            <option value="slidein">Slidein</option>
+                                            <option value="dropdown">Dropdown</option>
+                                            <option value="pushup">Pushup</option>
+                                        </select>
+                                    </label>
+                                    <label for="don-pgs" class="label ">Pages:
+                                        <select name="don-pgs" id="don-pgs" class="font-main-light select" data-child="addwidget" data-type="select" oninput="run.setFedPage(this)" data-for="donation">
+                                            <option value="allpages">All pages</option>
+                                            <option value="allposts">All posts</option>
+                                            <option value="home">Home</option>
+                                            <option value="about">About</option>
+                                            <option value="allpages">Custom post pages</option>
+
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="adntfy flex-row centerY">
+                                    <button class="defbutton">Add donation</button>
+                                </div>
+                            </div>
+                            <div class="feedback fadein">
+                                <div class="greeting">
+                                    <h3 class="heading">Add a newsletter:</h3>
+                                </div>
+                                <div class="pushnews slidein">
+                                    <h3>Newsletter settings</h3>
+                                </div>
+                                <div class="properties">
+                                    <label for="new-alig" class="label ">Select alignment:
+                                        <select name="new-align" id="new-alig" class="font-main-light select">
+                                            <option value="center">Center</option>
+                                            <option value="topleft">Top left</option>
+                                            <option value="bottomleft">Bottom left</option>
+                                            <option value="topright">Top right</option>
+                                            <option value="top">Bottom right</option>
+                                        </select>
+                                    </label>
+                                    <label for="new-ntanim" class="label ">Select animation:
+                                        <select name="new-ntanim" id="new-ntanim" class="font-main-light select slidein">
+                                            <option value="fade">Fade</option>
+                                            <option value="slidein">Slidein</option>
+                                            <option value="dropdown">Dropdown</option>
+                                            <option value="pushup">Pushup</option>
+                                        </select>
+                                    </label>
+                                    <label for="new-pgs" class="label ">Pages:
+                                        <select name="new-pgs" id="new-pgs" class="font-main-light select" data-child="addwidget" data-type="select" oninput="run.setFedPage(this)" data-for="donation">
+                                            <option value="allpages">All pages</option>
+                                            <option value="allposts">All posts</option>
+                                            <option value="home">Home</option>
+                                            <option value="about">About</option>
+                                            <option value="allpages">Custom post pages</option>
+
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="news-img label">
+                                    <input type="file" class="definp" name="new-image" id="new-img">
+                                </div>
+                                <div class="adntfy flex-row centerY">
+                                    <button class="defbutton">Add newsletter</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="custom-center"></section>
+                    </section>
+                </div>
+                <div class="container settings slidein">
+                    <div class="mainframe fadein">
+                        <div class="set-grt">
+                            <h2 class="headding fadein">Hey Juily!</h2>
+                        </div>
+                        <section class="adminset flex-column">
+                            <section class="admin-psrinfo flex-row centerY centerX">
+                                <div class="profilepic">
+                                    <img src="../assets/img/authorimg.jpg" alt="Profile Pic" class="fadein ad-fd-child">
+                                </div>
+                                <div class="prs-info-inp flex-column centerY">
+                                    <input type="text" name="adminm" id="admin_name" readonly value="Juily"class="definp fadein ad-fd-child">
+                                    <input type="text" name="admin-prof" id="admin-prof" readonly value="Author" class="definp fadein ad-fd-child">
+                                </div>
+                                <section class="admin-social">
+                                    <ul class="flex-column centerX centerY font-main-light">
+                                        <li class="link fa fa-facebook slidein ad-sc-link "><a href=""></a></li>
+                                        <li class="link fa fa-instagram slidein ad-sc-link "><a href=""></a></li>
+                                        <li class="link fa fa-twitter slidein ad-sc-link "><a href=""></a></li>
+                                        <li class="link fa fa-pinterest slidein ad-sc-link "><a href=""></a></li>
+                                        <li class="link fa fa-linkedin slidein ad-sc-link "><a href=""></a></li>
+                                    </ul>
+                                </section>
+                                <div class="edt-inf fadein ad-fd-child">
+                                    <button class="defbutton ad-per-info-btn" data-btn="n-btn" data-for="ad-per-info" data-status="no-tg" onclick="run.clickEvent(this)">Edit</button>
+                                </div>
+                            </section>
+                            <section class="editor"></section>
+                            <section class="admin-about">
+                                <div class="guide fadein ad-fd-child">
+                                    <h3 class="heading">About you:</h3><br>
+                                    <p class="subtext" style="color: var(--primary);">This will be on your about page
+                                    </p>
+                                </div>
+                                <div class="about-content">
+                                    <textarea name="abt-cont" id="abt-cont" cols="120" rows="15" style="resize: none;color:var(--subtext)" class="definp font-main-light fadein ad-fd-child" readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem delectus quaerat voluptates consequatur doloribus ipsam voluptas animi esse, suscipit in magnam quo vero libero omnis modi corrupti quibusdam dolore minima aliquam commodi repellat a necessitatibus obcaecati. Error vel, dignissimos ducimus illum, voluptatibus nesciunt consequuntur modi tempora natus atque quas exercitationem vitae perspiciatis veniam explicabo cum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus ex, dicta repellendus voluptate est recusandae cum, quae reprehenderit eius sapiente accusamus molestias repudiandae. Autem repudiandae totam illum perferendis omnis magni, eius maxime earum sunt nobis vitae vel iure provident impedit libero reiciendis incidunt consequatur repellat nesciunt possimus, officiis suscipit. Quibusdam dignissimos nemo sequi aliquam quae cum, reprehenderit repellat numquam est id tempore rerum rem deserunt. Aliquid quibusdam expedita id ea eos inventore! Nihil quibusdam expedita vero eos dolor minus similique, ab quisquam repudiandae quas!</textarea>
+                                </div>
+                                <div class="edt-abt fadein ad-fd-child">
+                                    <button class="defbutton" id="admin-pers-abt-btn" data-btn="n-btn" data-for="ad-per-abt" onclick="run.clickEvent(this)">Edit</button>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+                <div class="container logout">
+                    <div class="gdby">
+                        <h1>Good Bye Juily!</h1>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="ad-nty"></div>
+    </div>
+</body>
+<script defer src="./admin/admin.js"></script>
+
+</html>
